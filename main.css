@@ -1,0 +1,133 @@
+:root {
+    /* --wood-light: rgba(76, 48, 25, 1);
+    --wood-dark: rgba(52, 24, 0, 1); */
+
+    --wood-light: rgb(45 26 10);
+    --wood-dark: rgb(37 17 0);
+
+    /* --wood-light: rgb(32 32 32);
+    --wood-dark: rgb(0 0 0); */
+
+
+    --red: 255;
+    --green: 229;
+    --blue: 72;
+
+    --ligth-color-v: var(--red) var(--green) var(--blue);
+    --ligth-color-v-d: calc(0.4*var(--red)) calc(0.4*var(--green)) calc(0.4*var(--blue));
+    --ligth-color: rgb(var(--red), var(--green), var(--blue));
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+/*     font-family: 'Lato', sans-serif;
+    font-size: 100px; */
+}
+
+body {
+    background: #191919;
+}
+
+a {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+    color: rgba(255, 255, 255, 0.35);
+    transition: .2s ease all;
+}
+
+a:hover {
+    filter: brightness(.75);
+}
+
+.clock {
+    color: rgba(60, 60, 60, 0.64);
+    display: block;
+    text-align: center;
+    width: 700px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -150%);
+    font-family: 'Lato', sans-serif;
+    font-size: 100px;
+}
+
+.clock p.separator,
+.clock section {
+    display: inline-block;
+}
+
+.clock section div p {
+    position: absolute;
+    width: 60px;
+    text-align: center;
+    transition: 0.3s ease color, 0.3s ease text-shadow;
+}
+
+.clock p.separator {
+    font-size: 60px;
+    vertical-align: top;
+    margin-top: 22px;
+    height: 100px;
+    width: 30px;
+    border-top: 10px solid #22222233;
+    /* border-bottom: 10px solid #222222; */
+    border-bottom: 10px solid rgb(calc(0.05*var(--red)) calc(0.05*var(--green)) calc(0.05*var(--blue)));
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* background: linear-gradient(90deg, rgb(var(--ligth-color-v) / 25%) 0%, rgb(97 88 36 / 25%) 10%, rgba(18, 18, 18, 1) 25%, rgba(18, 18, 18, 1) 48%, rgba(180, 180, 180, 0.4) 50%, rgba(18, 18, 18, 1) 52%, rgba(18, 18, 18, 1) 75%, rgb(97 88 36 / 25%) 90%, rgb(var(--ligth-color-v) / 25%) 100%); */
+    background: linear-gradient(90deg, rgb(var(--ligth-color-v) / 25%) 0%, rgb(var(--ligth-color-v-d) / 25%) 10%, rgba(18, 18, 18, 1) 25%, rgba(18, 18, 18, 1) 48%, rgba(180, 180, 180, 0.4) 50%, rgba(18, 18, 18, 1) 52%, rgba(18, 18, 18, 1) 75%, rgb(var(--ligth-color-v-d) / 25%) 90%, rgb(var(--ligth-color-v) / 25%) 100%);
+}
+
+a:hover,
+.clock p.separator,
+.clock section p.active {
+    color: var(--ligth-color);
+    /* text-shadow: 0px 0px 20px #F58732; */
+    text-shadow: 0px 0px 20px var(--ligth-color);
+    font-weight: 600;
+}
+
+.clock section div {
+    display: inline-block;
+    width: 60px;
+    height: 120px;
+    border: 1px solid;
+    border-top: 10px solid #22222233;
+    /* border-bottom: 10px solid #222222; */
+    border-bottom: 10px solid rgb(calc(0.05*var(--red)) calc(0.05*var(--green)) calc(0.05*var(--blue)));
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background: linear-gradient(90deg, rgb(var(--ligth-color-v) / 25%) 0%, rgb(var(--ligth-color-v-d) / 25%) 10%, rgba(18, 18, 18, 1) 25%, rgba(18, 18, 18, 1) 75%, rgb(var(--ligth-color-v-d) / 25%) 90%, rgb(var(--ligth-color-v) / 25%) 100%);
+}
+
+
+.clockbase {
+    width: 710px;
+    height: 60px;
+    background-color: saddlebrown;
+    margin-top: 3px;
+    background: linear-gradient(180deg, var(--wood-dark) 0%, var(--wood-light) 10%, var(--wood-dark) 26%, var(--wood-light) 37%, var(--wood-dark) 45%, var(--wood-light) 58%, var(--wood-dark) 73%, var(--wood-light) 85%, var(--wood-dark) 100%);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: -5px;
+}
+
+
+.trapezoid {
+    position: absolute;
+    z-index: -1;
+    width: 600px;
+    height: 60px;
+    background: linear-gradient(180deg, rgb(102 63 29) 0%, rgb(87 51 20) 10%, rgb(71 39 12) 26%, rgb(65 34 8) 37%, rgb(59 34 14) 45%, rgb(52 28 9) 58%, rgb(73 40 11) 73%, rgb(81 46 16) 85%, rgb(89 43 5) 100%);
+    transform: perspective(10px) rotateX(3deg);
+    margin: auto;
+    margin-top: 100px;
+    left: 50px;
+}
