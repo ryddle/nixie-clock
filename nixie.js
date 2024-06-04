@@ -86,3 +86,5 @@ function hsb2rgb(_h, _s, _b) {
     let f = (n, k = (n + h / 60) % 6) => b - b * s * Math.max(Math.min(k, 4 - k, 1), 0);
     return {r:map(f(5), 0, 1, 0, 255),g:map(f(3), 0, 1, 0, 255),b:map(f(1), 0, 1, 0, 255)};
 }
+
+loopColor();
